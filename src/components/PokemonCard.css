@@ -1,0 +1,10 @@
+.pokemon-card {
+    background-color: rgba(249, 248, 248,.1);
+    border-radius: 1rem;
+    max-width: 200px;
+}
+
+.pokemon-avatar {
+    border-radius: 1rem;
+    max-width: 150px;
+}
