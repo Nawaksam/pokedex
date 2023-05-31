@@ -13,28 +13,22 @@ const pokemonList = [
 
 const pokemon = pokemonList[0]
 
-const PokemonEmpty = () => {
-  return (
-    <>
-      <div className="pokemon-card">
-        <figure>
-          <p>???</p>
-          <figcaption>{pokemon.name}</figcaption>
-        </figure>
-      </div>
-    </>
-  )
+const ImgSource = () => {
+  if (pokemon.imgSrc) {
+    return (
+      <img className="pokemon-avatar" src={pokemon.imgSrc} alt={pokemon.name} />
+    )
+  } else {
+    return <p>???</p>
+  }
 }
-const Pokemon = () => {
+
+const PokemonCard = () => {
   return (
     <>
       <div className="pokemon-card">
         <figure>
-          <img
-            className="pokemon-avatar"
-            src={pokemon.imgSrc}
-            alt={pokemon.name}
-          />
+          <ImgSource />
           <figcaption>{pokemon.name}</figcaption>
         </figure>
       </div>
@@ -42,11 +36,4 @@ const Pokemon = () => {
   )
 }
 
-const PokemonCard = () => {
-  if (pokemon.imgSrc) {
-    return <Pokemon />
-  } else {
-    return <PokemonEmpty />
-  }
-}
 export default PokemonCard
