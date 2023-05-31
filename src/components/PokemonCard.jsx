@@ -1,20 +1,52 @@
 import "./PokemonCard.css"
 
-const Card = () => {
+const pokemonList = [
+  {
+    name: "bulbasaur",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+  },
+  {
+    name: "mew",
+  },
+]
+
+const pokemon = pokemonList[0]
+
+const PokemonEmpty = () => {
+  return (
+    <>
+      <div className="pokemon-card">
+        <figure>
+          <p>???</p>
+          <figcaption>{pokemon.name}</figcaption>
+        </figure>
+      </div>
+    </>
+  )
+}
+const Pokemon = () => {
   return (
     <>
       <div className="pokemon-card">
         <figure>
           <img
             className="pokemon-avatar"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-            alt="Image aléatoire"
+            src={pokemon.imgSrc}
+            alt={pokemon.name}
           />
-          <figcaption>Bulbasaur</figcaption>
+          <figcaption>{pokemon.name}</figcaption>
         </figure>
       </div>
     </>
   )
 }
 
-export default Card
+const PokemonCard = () => {
+  if (pokemon.imgSrc) {
+    return <Pokemon />
+  } else {
+    return <PokemonEmpty />
+  }
+}
+export default PokemonCard
