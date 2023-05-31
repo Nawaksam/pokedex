@@ -1,3 +1,4 @@
+import { useState } from "react"
 import "./App.css"
 import PokemonCard from "./components/PokemonCard.jsx"
 
@@ -20,11 +21,31 @@ const pokemonList = [
 ]
 
 function App() {
+  const [count, setCount] = useState(0)
+  const next = () => {
+    if (count < pokemonList.length - 1) {
+      setCount(count + 1)
+    } else {
+      alert(`T'es à la fin gros`)
+    }
+  }
+  const previous = () => {
+    if (count > 0) {
+      setCount(count - 1)
+    } else {
+      alert(`T'es au début gros`)
+    }
+  }
+
   return (
     <>
       <h1>Attrapez-les tous !</h1>
       <p>...</p>
-      <PokemonCard pokemon={pokemonList[1]} />
+      <PokemonCard pokemon={pokemonList[count]} />
+      <div className="container-button">
+        <button onClick={previous}>Précédent</button>
+        <button onClick={next}>Suivant</button>
+      </div>
     </>
   )
 }
