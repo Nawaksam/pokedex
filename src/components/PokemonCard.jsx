@@ -13,11 +13,9 @@ const pokemonList = [
 
 const pokemon = pokemonList[0]
 
-const ImgSource = () => {
-  if (pokemon.imgSrc) {
-    return (
-      <img className="pokemon-avatar" src={pokemon.imgSrc} alt={pokemon.name} />
-    )
+const isSrc = (item) => {
+  if (item.imgSrc) {
+    return <img className="pokemon-avatar" src={item.imgSrc} alt={item.name} />
   } else {
     return <p>???</p>
   }
@@ -28,7 +26,7 @@ const PokemonCard = () => {
     <>
       <div className="pokemon-card">
         <figure>
-          <ImgSource />
+          {isSrc(pokemon)}
           <figcaption>{pokemon.name}</figcaption>
         </figure>
       </div>
