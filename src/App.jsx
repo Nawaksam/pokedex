@@ -22,29 +22,24 @@ const pokemonList = [
 
 function App() {
   const [count, setCount] = useState(0)
-  const next = () => {
-    if (count < pokemonList.length - 1) {
-      setCount(count + 1)
-    } else {
-      alert(`T'es à la fin gros`)
-    }
-  }
-  const previous = () => {
-    if (count > 0) {
-      setCount(count - 1)
-    } else {
-      alert(`T'es au début gros`)
-    }
-  }
 
+  let isHiddenPrevious = true
+  let isHiddenNext = false
+  if (count > 0) {
+    isHiddenPrevious = false
+  }
+  if (count === pokemonList.length - 1) {
+    isHiddenNext = true
+  }
+  // prettier-ignore
   return (
     <>
       <h1>Attrapez-les tous !</h1>
       <p>...</p>
       <PokemonCard pokemon={pokemonList[count]} />
       <div className="container-button">
-        <button onClick={previous}>Précédent</button>
-        <button onClick={next}>Suivant</button>
+        {!isHiddenPrevious && (<button onClick={() => {setCount(count - 1)}}>Précédent</button>)}
+        {!isHiddenNext && (<button onClick={() => {setCount(count + 1)}}>Suivant</button>)}
       </div>
     </>
   )
