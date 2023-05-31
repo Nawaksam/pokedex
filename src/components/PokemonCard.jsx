@@ -11,8 +11,6 @@ const pokemonList = [
   },
 ]
 
-const pokemon = pokemonList[0]
-
 const isSrc = (item) => {
   if (item.imgSrc) {
     return <img className="pokemon-avatar" src={item.imgSrc} alt={item.name} />
@@ -22,6 +20,7 @@ const isSrc = (item) => {
 }
 
 const PokemonCard = () => {
+  const pokemon = pokemonList[0]
   return (
     <>
       <div className="pokemon-card">
