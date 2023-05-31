@@ -1,8 +1,7 @@
 import "./PokemonCard.css"
 
 // prettier-ignore
-const PokemonCard = (props) => {
-  const pokemon = props.pokemon
+const PokemonCard = ({pokemon}) => {
   return (
     <>
       <div className="pokemon-card">
