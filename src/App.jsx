@@ -25,7 +25,7 @@ function App() {
     <>
       <h1>Attrapez-les tous !</h1>
       <p>...</p>
-      <PokemonCard pokemon={pokemonList[0]} />
+      <PokemonCard pokemon={pokemonList[1]} />
     </>
   )
 }
