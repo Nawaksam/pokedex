@@ -49,7 +49,6 @@ function App() {
   return (
     <>
       <h1>Attrapez-les tous !</h1>
-      <p>...</p>
       <PokemonCard pokemon={pokemonList[count]} />
       <NavBar count={count} setCount={setCount} list={pokemonList}/>
     </>
