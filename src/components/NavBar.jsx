@@ -1,15 +1,12 @@
 import "./NavBar.css"
-
+// prettier-ignore
 const NavBar = ({ count, setCount, list }) => {
   return (
     <>
       {list.map((item, index) => (
         <button
           key={item.name}
-          onClick={() => {
-            setCount((count = index))
-          }}
-        >
+          onClick={() => {setCount((count = index))}}>
           {item.name}
         </button>
       ))}
