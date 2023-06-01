@@ -3,7 +3,9 @@ import PropTypes from "prop-types"
 
 // prettier-ignore
 const PokemonCard = ({pokemon}) => {
-
+  if (pokemon.name === "pikachu"){
+    alert("pika pikachu !!!")
+  }
   return (
       <div className="pokemon-card">
         <figure>

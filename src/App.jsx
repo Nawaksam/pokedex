@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./App.css"
 import PokemonCard from "./components/PokemonCard.jsx"
 import NavBar from "./components/NavBar"
@@ -41,6 +41,9 @@ const pokemonList = [
 
 function App() {
   const [count, setCount] = useState(0)
+  useEffect(() => {
+    alert(`Bienvenue jeune Dresseur`)
+  }, [])
 
   // prettier-ignore
   return (
