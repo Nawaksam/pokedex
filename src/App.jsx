@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "./App.css"
 import PokemonCard from "./components/PokemonCard.jsx"
+import NavBar from "./components/NavBar"
 
 const pokemonList = [
   {
@@ -29,10 +30,7 @@ function App() {
       <h1>Attrapez-les tous !</h1>
       <p>...</p>
       <PokemonCard pokemon={pokemonList[count]} />
-      <div className="container-button">
-        {count>0 && (<button onClick={() => {setCount(count - 1)}}>Précédent</button>)}
-        {count<pokemonList.length -1 && (<button onClick={() => {setCount(count + 1)}}>Suivant</button>)}
-      </div>
+      <NavBar count={count} setCount={setCount} list={pokemonList}/>
     </>
   )
 }
